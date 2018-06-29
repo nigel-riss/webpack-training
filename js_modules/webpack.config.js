@@ -21,6 +21,16 @@ const config = {
                     fallback: 'style-loader',
                     use: 'css-loader'
                 })
+            },
+            {
+                test: /\.(jpe?g|png|git|svg)$/,
+                use: [
+                    {
+                        loader: 'url-loader',
+                        options: { limit: 40000 }
+                    },
+                    'image-webpack-loader'
+                ]
             }
         ]
     },
